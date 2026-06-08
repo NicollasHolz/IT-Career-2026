@@ -8,6 +8,7 @@ const resultDiv = document.getElementById("result");
 const quotesList = document.getElementById("quotesList");
 const serviceTypeInput = document.getElementById("serviceType");
 const clearAllButton = document.getElementById("clearAll");
+const summaryDiv = document.getElementById("summary");
 
 let quotes = loadQuotes();
 
@@ -59,9 +60,8 @@ calculateButton.addEventListener("click", function () {
     quotes.push(quote);
 
     saveQuotes();
-
     renderQuotes();
-
+    renderSummary();
     clearInputs();
 
     console.log("Total quotes calculated:", quotes.length);
@@ -134,12 +134,45 @@ function deleteQuotes(index) {
     quotes.splice(index, 1);
     saveQuotes();
     renderQuotes();
+    renderSummary();
 }
 
 clearAllButton.addEventListener("click", function () {
     quotes = [];
     saveQuotes();
     renderQuotes();
+    renderSummary();
 });
 
+function renderSummary() {
+    const totalQuotes = quotes.length;
+
+    const totalAmount = quotes.reduce(function (sum, quote) {
+        return sum + quote.total;
+    }, 0);
+
+    const averageQuote = totalQuotes > 0 ? totalAmount / totalQuotes : 0;
+
+    summaryDiv.innerHTML = `
+        <div class="summary-card">
+            <span class="summary-label">Total Quotes</span>
+            <strong>${totalQuotes}</strong>
+        </div>
+
+        <div class="summary-card">
+            <span class="summary-label">Total Amount</span>
+            <strong>$${totalAmount.toFixed(2)}</strong>
+        </div>
+
+        <div class="summary-card">
+            <span class="summary-label">Average Quote</span>
+            <strong>$${averageQuote.toFixed(2)}</strong>
+        </div>
+    `;
+}
+
+
+
+
 renderQuotes();
+renderSummary();
