@@ -1,50 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Service Quote Calculator</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main class="container">
-    <h1>Service Quote Calculator</h1>
-    <p class="subtitle">A simple quote calculator for small service businesses.</p>
+# Study Log
 
-    <section class="card">
-      <label for="customerName">Customer name</label>
-      <input type="text" id="customerName" placeholder="Example: John Smith" />
+## Day 1 - Cleaning Quote Calculator
 
-      <label for="serviceType">Service type</label>
-      <select id="serviceType">
-        <option value="">Select a service</option>
-        <option value="Cleaning">Cleaning</option>
-        <option value="Car Detailing">Car Detailing</option>
-        <option value="Pressure Washing">Pressure Washing</option>
-        <option value="Furniture Delivery">Furniture Delivery</option>
-      </select>
+Today I built a quote calculator using HTML and JavaScript.
 
-      <label for="hours">Estimated hours</label>
-      <input type="number" id="hours" placeholder="Example: 3" />
+### What I practised
 
-      <label for="hourlyRate">Hourly rate</label>
-      <input type="number" id="hourlyRate" placeholder="Example: 45" />
+- Getting HTML elements with getElementById
+- Reading input values
+- Converting strings to numbers
+- Validating form fields
+- Creating objects
+- Saving objects inside an array
+- Rendering a list on the page
+- Saving data with localStorage
+- Deleting items from an array
 
-      <label for="extraFee">Extra fee</label>
-      <input type="number" id="extraFee" placeholder="Example: 20" />
+### What I learned
 
-      <button id="calculateBtn">Calculate quote</button>
+I learned how to connect HTML inputs with JavaScript and create a simple app that stores quotes in the browser.
 
-      <div id="result" class="result"></div>
-    </section>
+### Next step
 
-    <section class="card">
-      <h2>Saved Quotes</h2>
-      <ul id="quotesList"></ul>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+Next, I want to improve the design with CSS and make the project look more professional.
