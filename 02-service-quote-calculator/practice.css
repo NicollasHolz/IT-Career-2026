@@ -14,17 +14,11 @@ body {
     padding: 20px;
 }
 
-input,
-select,
-button {
+input, select, button {
     width: 100%;
     padding: 12px;
     margin-top: 10px;
     font-size: 16px;
-}
-
-button {
-    cursor: pointer;
 }
 
 .card {
@@ -32,18 +26,14 @@ button {
     padding: 20px;
     margin-top: 20px;
     border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
     margin-bottom: 5px;
 }
 
-.card {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-input,
-select {
+input, select {
     border: 1px solid #ccc;
     border-radius: 8px;
 }
@@ -51,8 +41,31 @@ select {
 button {
     border: none;
     border-radius: 8px;
+    cursor: pointer;
+}
+
+.primary-button {
     background: #222;
     color: white;
+}
+
+.danger-button {
+    background: #b00020;
+    color: white;
+}
+
+.delete-button {
+    background: #b00020;
+    color: white;
+    width: auto;
+    padding: 5px 10px;
+    margin-left: 8px;
+    margin-top: 0;
+    font-size: 12px;
+}
+
+.delete-button:hover {
+    background: #9e011b;
 }
 
 button:hover {
@@ -72,4 +85,8 @@ button:hover {
 
 #quotesList li {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }

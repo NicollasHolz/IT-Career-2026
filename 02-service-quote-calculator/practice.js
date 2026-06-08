@@ -88,16 +88,18 @@ function renderQuotes() {
     quotes.forEach(function (quote, index) {
         const li = document.createElement("li");
 
-        li.textContent = `${index + 1}. ${quote.customerName} | ${quote.serviceType} | ${quote.hours}h x $${quote.hourlyRate.toFixed(2)} + $${quote.extraFee.toFixed(2)} extra - $${quote.discount.toFixed(2)} discount = $${quote.total.toFixed(2)}`;
+        const quoteText = document.createElement("span");
+        quoteText.textContent = `${index + 1}. ${quote.customerName} | ${quote.serviceType} | ${quote.hours}h x $${quote.hourlyRate.toFixed(2)} + $${quote.extraFee.toFixed(2)} extra - $${quote.discount.toFixed(2)} discount = $${quote.total.toFixed(2)}`;
+
 
         const deleteButton = document.createElement("button");
-
         deleteButton.textContent = "Delete";
+        deleteButton.classList.add("delete-button");
         deleteButton.addEventListener("click", function () {
             deleteQuotes(index);
         });
 
-        li.appendChild(document.createTextNode(" "));
+        li.appendChild(quoteText);
         li.appendChild(deleteButton);
 
         quotesList.appendChild(li);
