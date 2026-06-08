@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Quote Calculator</title>
+</head>
+<body>
+    <h1>Cleaning Quote Calculator</h1>
+
+    <input type="text" id="customerName" placeholder="Name">
+    <select id="serviceType">
+        <option value="">Select service type</option>
+        <option value="Cleaning">Cleaning</option>
+        <option value="Car Detailing">Car Detailing</option>
+        <option value="Pressure Washing">Pressure Washing</option>
+        <option value="Furniture Delivery">Furniture Delivery</option>
+    </select>
+    <input type="number" id="hours" placeholder="Hours">
+    <input type="number" id="hourlyRate" placeholder="Hourly Rate">
+    <input type="number" id="extraFee" placeholder="Extra Fee">
+    <input type="number" id="discount" placeholder="Discount $">
+
+    <button id="calculate">Calculate</button>
+    <div id="result"></div>
+
+    <h2>Saved Quotes</h2>
+    <button id="clearAll">Clear All Quotes</button>
+    <ul id="quotesList"></ul>
+
+    <script src="practice.js"></script>
+</body>
+</html>
