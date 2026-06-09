@@ -54,14 +54,27 @@ button {
     color: white;
 }
 
-.delete-button {
-    background: #b00020;
-    color: white;
+.accept-button, .reject-button, .delete-button {
     width: auto;
     padding: 5px 10px;
     margin-left: 8px;
     margin-top: 0;
     font-size: 12px;
+}
+
+.accept-button {
+    background: #0f7b0f;
+    color: white;
+}
+
+.reject-button {
+    background: #d98200;
+    color: white;
+}
+
+.delete-button {
+    background: #b00020;
+    color: white;
 }
 
 .delete-button:hover {
@@ -123,3 +136,4 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
+

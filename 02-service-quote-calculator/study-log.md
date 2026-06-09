@@ -107,6 +107,9 @@ Today I added a created date to each quote.
 - I displayed the created date in the saved quotes list.
 - I handled old quotes without a date by showing "No date".
 - I tested that the date stays saved after refreshing the page.
+- New quotes start with Pending status.
+- I added Accept and Reject buttons.
+- I created a function to update the quote status.
 
 ### What I practised
 

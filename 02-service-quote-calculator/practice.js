@@ -56,7 +56,8 @@ calculateButton.addEventListener("click", function () {
         extraFee,
         discount,
         total,
-        createdAt
+        createdAt,
+        status: "Pending"
     };
 
     quotes.push(quote);
@@ -91,7 +92,7 @@ function renderQuotes() {
         const li = document.createElement("li");
 
         const quoteText = document.createElement("span");
-        quoteText.textContent = `${index + 1}. ${quote.customerName} | ${quote.serviceType} | ${quote.hours}h x $${quote.hourlyRate.toFixed(2)} + $${quote.extraFee.toFixed(2)} extra - $${quote.discount.toFixed(2)} discount = $${quote.total.toFixed(2)} | Created: ${quote.createdAt || "No date"}`;
+        quoteText.textContent = `${index + 1}. ${quote.customerName} | ${quote.serviceType} | ${quote.hours}h x $${quote.hourlyRate.toFixed(2)} + $${quote.extraFee.toFixed(2)} extra - $${quote.discount.toFixed(2)} discount = $${quote.total.toFixed(2)} | Status: ${quote.status || "Pending"} | Created: ${quote.createdAt || "No date"}`;
 
 
         const deleteButton = document.createElement("button");
@@ -100,9 +101,28 @@ function renderQuotes() {
         deleteButton.addEventListener("click", function () {
             deleteQuotes(index);
         });
+        
+        const acceptButton = document.createElement("button");
+        acceptButton.textContent = "Accept";
+        acceptButton.classList.add("accept-button");
+
+        acceptButton.addEventListener("click", function () {
+            updateQuoteStatus(index, "Accepted");
+        });
+
+        const rejectButton = document.createElement("button");
+        rejectButton.textContent = "Reject";
+        rejectButton.classList.add("reject-button");
+
+        rejectButton.addEventListener("click", function () {
+            updateQuoteStatus(index, "Rejected");
+        });
 
         li.appendChild(quoteText);
+        li.appendChild(acceptButton);
+        li.appendChild(rejectButton);
         li.appendChild(deleteButton);
+        
 
         quotesList.appendChild(li);
         
@@ -173,6 +193,12 @@ function renderSummary() {
     `;
 }
 
+function updateQuoteStatus(index, newStatus) {
+    quotes[index].status = newStatus;
+    saveQuotes();
+    renderQuotes();
+    renderSummary();
+}
 
 
 
