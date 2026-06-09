@@ -95,3 +95,29 @@ Today I added a small summary dashboard to my quote calculator.
 I learned how to create a simple dashboard using JavaScript and CSS.
 
 I also learned how to calculate business metrics from an array of objects and display them in a cleaner visual layout.
+
+## Day 3 - Created Date for Quotes
+
+Today I added a created date to each quote.
+
+### What I built
+
+- I added a createdAt property to each quote object.
+- I used new Date().toLocaleString() to create the date and time.
+- I displayed the created date in the saved quotes list.
+- I handled old quotes without a date by showing "No date".
+- I tested that the date stays saved after refreshing the page.
+
+### What I practised
+
+- JavaScript Date
+- Object properties
+- localStorage
+- Rendering dynamic data
+- Fallback values using ||
+
+### What I learned
+
+I learned how to save the date and time when a quote is created.
+
+I also learned how to use a fallback value to avoid showing undefined for older quotes.

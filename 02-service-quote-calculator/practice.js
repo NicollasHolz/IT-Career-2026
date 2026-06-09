@@ -46,6 +46,7 @@ calculateButton.addEventListener("click", function () {
     }
 
     const total = calculateTotal(hours, hourlyRate, extraFee, discount);
+    const createdAt = new Date().toLocaleString();
 
     const quote = {
         customerName,
@@ -54,7 +55,8 @@ calculateButton.addEventListener("click", function () {
         hourlyRate,
         extraFee,
         discount,
-        total
+        total,
+        createdAt
     };
 
     quotes.push(quote);
@@ -89,7 +91,7 @@ function renderQuotes() {
         const li = document.createElement("li");
 
         const quoteText = document.createElement("span");
-        quoteText.textContent = `${index + 1}. ${quote.customerName} | ${quote.serviceType} | ${quote.hours}h x $${quote.hourlyRate.toFixed(2)} + $${quote.extraFee.toFixed(2)} extra - $${quote.discount.toFixed(2)} discount = $${quote.total.toFixed(2)}`;
+        quoteText.textContent = `${index + 1}. ${quote.customerName} | ${quote.serviceType} | ${quote.hours}h x $${quote.hourlyRate.toFixed(2)} + $${quote.extraFee.toFixed(2)} extra - $${quote.discount.toFixed(2)} discount = $${quote.total.toFixed(2)} | Created: ${quote.createdAt || "No date"}`;
 
 
         const deleteButton = document.createElement("button");
